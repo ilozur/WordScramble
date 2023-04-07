@@ -32,6 +32,7 @@ struct ContentView: View {
             }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
+            .onAppear(perform: startGame)
         }
     }
     
@@ -43,6 +44,17 @@ struct ContentView: View {
             usedWords.insert(answer, at: 0)
             newWord = ""
         }
+    }
+    
+    func startGame() {
+        if let dictionaryWordsURL = Bundle.main.url(forResource: "Dictionary", withExtension: "txt") {
+            if let dictionaryWords = try? String(contentsOf: dictionaryWordsURL) {
+                let allWords = dictionaryWords.components(separatedBy: "\n")
+                rootWord = allWords.randomElement() ?? "silkworm"
+                return
+            }
+        }
+        fatalError("Could not load Dictionary.txt from bunlde")
     }
     
 }
