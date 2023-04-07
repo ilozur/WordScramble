@@ -11,6 +11,7 @@
 		BEA91DEB29E002C90033E360 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA91DEA29E002C90033E360 /* ContentView.swift */; };
 		BEA91DED29E002CA0033E360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA91DEC29E002CA0033E360 /* Assets.xcassets */; };
 		BEA91DF029E002CA0033E360 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA91DEF29E002CA0033E360 /* Preview Assets.xcassets */; };
+		BEA91DF729E003010033E360 /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA91DF629E003010033E360 /* Overview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BEA91DEA29E002C90033E360 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BEA91DEC29E002CA0033E360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA91DEF29E002CA0033E360 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BEA91DF629E003010033E360 /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BEA91DE829E002C90033E360 /* WordScrambleApp.swift */,
 				BEA91DEA29E002C90033E360 /* ContentView.swift */,
+				BEA91DF629E003010033E360 /* Overview.swift */,
 				BEA91DEC29E002CA0033E360 /* Assets.xcassets */,
 				BEA91DEE29E002CA0033E360 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA91DF729E003010033E360 /* Overview.swift in Sources */,
 				BEA91DEB29E002C90033E360 /* ContentView.swift in Sources */,
 				BEA91DE929E002C90033E360 /* WordScrambleApp.swift in Sources */,
 			);
