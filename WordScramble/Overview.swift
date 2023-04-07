@@ -40,6 +40,15 @@ struct Overview: View {
         }
         .listStyle(.insetGrouped)
     }
+    
+    func loadFile(){
+        if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: fileURL) {
+                // pass
+            }
+        }
+    }
+    
 }
 
 struct Overview_Previews: PreviewProvider {
