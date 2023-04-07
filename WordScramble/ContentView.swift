@@ -68,6 +68,11 @@ struct ContentView: View {
             return
         }
         
+        guard isNormal(word: answer) else {
+            wordError(title: "Word is not normal", message: "Word could be have more that 2 letter. And, of cource, it could't be equal '\(rootWord)'")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
             newWord = ""
@@ -108,6 +113,14 @@ struct ContentView: View {
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isNormal(word: String) -> Bool {
+        if word == rootWord || word.count < 3 {
+            return false
+        } else {
+            return true
+        }
     }
     
     func wordError(title: String, message: String) {
