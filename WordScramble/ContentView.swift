@@ -17,12 +17,19 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     TextField("Enter your word", text: $newWord)
                         .autocapitalization(.none)
+                }
+                
+                Section {
+                    Text("Your score: \(score)")
+                        .font(.title3)
                 }
                 
                 Section {
@@ -80,6 +87,8 @@ struct ContentView: View {
             usedWords.insert(answer, at: 0)
             newWord = ""
         }
+        
+        score += 10 + answer.count
     }
     
     func startGame() {
@@ -89,6 +98,7 @@ struct ContentView: View {
                 rootWord = allWords.randomElement() ?? "silkworm"
                 usedWords  = [String]()
                 newWord = ""
+                score = 0
                 return
             }
         }
@@ -133,7 +143,6 @@ struct ContentView: View {
         errorMessage = message
         showingError = true
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
