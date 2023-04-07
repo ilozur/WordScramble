@@ -34,6 +34,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .toolbar() {
+                Button("New word", action: startGame)
+            }
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
@@ -84,6 +87,8 @@ struct ContentView: View {
             if let dictionaryWords = try? String(contentsOf: dictionaryWordsURL) {
                 let allWords = dictionaryWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
+                usedWords  = [String]()
+                newWord = ""
                 return
             }
         }
