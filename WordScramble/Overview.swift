@@ -7,9 +7,38 @@
 
 import SwiftUI
 
+let people = ["Finn", "Leia", "Luke", "Rey"]
+
 struct Overview: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section("Section 1") {
+                Text("Static row 1")
+                Text("Static row 2")
+            }
+            
+            Section("Section 2") {
+                ForEach(1..<5) {
+                    Text("Dynamic row \($0)")
+                }
+            }
+            
+            Section("Section 3") {
+                Text("Static row 3")
+                Text("Static row 4")
+            }
+        }
+        .listStyle(.grouped)
+        
+        List(0..<5) {
+            Text("Dynamic row \($0)")
+        }
+        .listStyle(.plain)
+        
+        List(people, id: \.self) {
+            Text($0)
+        }
+        .listStyle(.insetGrouped)
     }
 }
 
