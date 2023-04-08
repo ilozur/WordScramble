@@ -43,7 +43,7 @@ struct Overview: View {
     
     func loadFile(){
         if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt") {
-            if let fileContents = try? String(contentsOf: fileURL) {
+            if (try? String(contentsOf: fileURL)) != nil {
                 // pass
             }
         }
@@ -62,7 +62,7 @@ struct Overview: View {
         letters = input.components(separatedBy: "\n")
         let letter = letters.randomElement()
         
-        let trimmed = letter?.trimmingCharacters(in: .whitespacesAndNewlines)
+        _ = letter?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func oldTest() {
@@ -73,7 +73,7 @@ struct Overview: View {
         
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
-        let allGood = misspelledRange.location == NSNotFound
+        _ = misspelledRange.location == NSNotFound
     }
 }
 
